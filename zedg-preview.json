@@ -1,24 +1,41 @@
 {
-  "version": "1.2.2-pre",
+  "version": "1.2.3-pre",
   "description": "Zed Editor (Localized / 汉化版) - Preview",
   "homepage": "https://github.com/x6nux/zed-globalization",
   "license": "GPL-3.0-only",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.2.2-pre/zedg-zh-cn-windows-x86_64-v1.2.2-pre.zip",
-      "hash": "dbe7f23a0b0d5dfeec39d23df7cc6cacf3c1bee9d784fc15b3d6ca114a7e47a5"
+      "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.2.3-pre/zedg-zh-cn-windows-x86_64-v1.2.3-pre.zip",
+      "hash": "2af4edeee84d6e7ef6429f52de7922c7468e16e8500ef155c4fa953bbd00ecd4"
     },
     "arm64": {
-      "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.2.2-pre/zedg-zh-cn-windows-aarch64-v1.2.2-pre.zip",
-      "hash": "9974d9ba9651b2d5c5ee47a845cddeaa0325f22920d89296aa220af611c3fa3c"
+      "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.2.3-pre/zedg-zh-cn-windows-aarch64-v1.2.3-pre.zip",
+      "hash": "18d0016912984d28bee3fe25663e8bf0adddbc41b98a578ce670217b5f852f5a"
     }
   },
-  "bin": "ZedG.exe",
+  "bin": [
+    [
+      "bin\\ZedG.exe",
+      "zedg"
+    ]
+  ],
   "shortcuts": [
     [
       "ZedG.exe",
       "ZedG"
     ]
+  ],
+  "post_install": [
+    "$desktop = [Environment]::GetFolderPath(\"Desktop\")",
+    "$ws = New-Object -ComObject WScript.Shell",
+    "$lnk = $ws.CreateShortcut(\"$desktop\\ZedG.lnk\")",
+    "$lnk.TargetPath = \"$dir\\ZedG.exe\"",
+    "$lnk.WorkingDirectory = \"$dir\"",
+    "$lnk.Save()"
+  ],
+  "pre_uninstall": [
+    "$desktop = [Environment]::GetFolderPath(\"Desktop\")",
+    "Remove-Item \"$desktop\\ZedG.lnk\" -ErrorAction SilentlyContinue"
   ],
   "checkver": {
     "github": "https://github.com/x6nux/zed-globalization"
