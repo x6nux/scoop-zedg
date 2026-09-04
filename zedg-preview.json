@@ -6,11 +6,11 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.19.0-pre/zedg-zh-cn-windows-x86_64-v1.19.0-pre.zip",
-      "hash": "7d6e145c97f04d2cff245223e0e8a7ac3c997a4fa6958b0a9235c11dcadd2648"
+      "hash": "47681d7f6665aa04fb49460fbde2f4604f1a2db476dfa2590bcfa0475121b9b5"
     },
     "arm64": {
       "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.19.0-pre/zedg-zh-cn-windows-aarch64-v1.19.0-pre.zip",
-      "hash": "31aa7b2de6f7320ff68a96dfcb4bc010ac7640476e8bacaa36d7564b57283967"
+      "hash": "6514eb0a7e6f5ecf1635be6871f171f3f0a1a98873b8de703a6971078eb3547e"
     }
   },
   "bin": [
